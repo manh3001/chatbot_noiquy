@@ -7,46 +7,37 @@ import logging
 import time
 import uuid
 from dotenv import load_dotenv
+from fastapi.staticfiles import StaticFiles
 
-# ---------------------------
-# 1️⃣ Cấu hình môi trường & logging
-# ---------------------------
+
+# Cấu hình môi trường & logging
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("chatbot_api")
 
-# ---------------------------
-# 2️⃣ Khởi tạo FastAPI
-# ---------------------------
+
+# Khởi tạo FastAPI
 app = FastAPI(title="Company Chatbot API", version="1.0.0")
 
-# ---------------------------
-# 3️⃣ Cấu hình CORS
-# ---------------------------
+# Cấu hình CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # chỉnh lại domain nếu cần
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ---------------------------
-# 4️⃣ Schema cho request
-# ---------------------------
+# Schema cho request
 class QuestionRequest(BaseModel):
     question: str = Field(..., example="Công ty làm việc từ mấy giờ?")
     session_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
 
-# ---------------------------
-# 5️⃣ Khởi tạo QA Chain
-# ---------------------------
+# Khởi tạo QA Chain
 qa_chain = create_qa_chain()
 logger.info("✅ QA chain loaded successfully")
 
-# ---------------------------
-# 6️⃣ Endpoint hỏi–đáp
-# ---------------------------
+# Endpoint hỏi–đáp
 @app.post("/ask")
 async def ask_question(request: QuestionRequest):
     logger.info(f"❓ Nhận câu hỏi: {request.question}")
@@ -67,9 +58,9 @@ async def ask_question(request: QuestionRequest):
         logger.exception("❌ Lỗi khi xử lý câu hỏi:")
         raise HTTPException(status_code=500, detail=str(e))
 
-# ---------------------------
-# 7️⃣ Kiểm tra API
-# ---------------------------
+# Kiểm tra API
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "message": "Chatbot API is running!"}
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
