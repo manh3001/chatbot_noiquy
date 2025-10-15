@@ -23,19 +23,19 @@ def create_qa_chain():
 
     logger.info("🚀 Bắt đầu khởi tạo RAG chain...")
 
-    # 1️⃣ Load tài liệu nội quy
+    # Load tài liệu nội quy
     loader = TextLoader("data/company_rules.txt", encoding="utf-8")
     documents = loader.load()
 
-    # 2️⃣ Chia nhỏ văn bản
+    # Chia nhỏ văn bản
     splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     split_docs = splitter.split_documents(documents)
     logger.info(f"✅ Số đoạn sau khi chia: {len(split_docs)}")
 
-    # 3️⃣ Tạo embedding
+    # Tạo embedding
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    # 4️⃣ Tạo / load VectorDB
+    # Tạo / load VectorDB
     vectordb = Chroma.from_documents(
         split_docs, 
         embeddings, 
@@ -43,7 +43,7 @@ def create_qa_chain():
     )
     vectordb.persist()
 
-    # 5️⃣ Cấu hình mô hình Ollama
+    # Cấu hình mô hình Ollama
     llm = OllamaLLM(
         model=os.getenv("OLLAMA_MODEL", "llama3"),
         temperature=float(os.getenv("LLM_TEMPERATURE", "0.2")),
@@ -52,7 +52,7 @@ def create_qa_chain():
         num_ctx=int(os.getenv("LLM_NUM_CTX", "4096"))
     )
 
-    # 6️⃣ Prompt mẫu
+    # Prompt mẫu
     template = """
     Bạn là trợ lý AI hiểu rõ nội quy công ty. Dựa trên thông tin dưới đây:
     {context}
@@ -60,7 +60,7 @@ def create_qa_chain():
     """
     prompt = PromptTemplate(template=template, input_variables=["context", "question"])
 
-    # 7️⃣ Tạo chuỗi hỏi–đáp
+    # Tạo chuỗi hỏi–đáp
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         retriever=vectordb.as_retriever(search_kwargs={"k": 3}),
