@@ -1,12 +1,74 @@
-NỘI QUY CÔNG TY
-1.Công ty làm việc từ thứ Hai đến thứ Sáu.
-2.Giờ hành chính: 8h00 sáng đến 17h00 chiều.
-3.Nhân viên có 1 tiếng nghỉ trưa từ 12h00 đến 13h00.
-4.Nhân viên được nghỉ phép 12 ngày mỗi năm.
-5.Khi xin nghỉ, cần báo trước ít nhất 1 ngày làm việc.
-6.Không được sử dụng điện thoại cá nhân trong giờ làm việc trừ trường hợp khẩn cấp.
-7.Công ty cấm hút thuốc trong khu vực làm việc.
-8.Các cuộc họp sáng thứ Hai bắt đầu lúc 8h30.
-9.Nhân viên đến muộn quá 15 phút sẽ bị trừ 50.000 VNĐ/lần.
-10.Thưởng cuối năm dựa theo hiệu suất và thái độ làm việc.
-11.Công ty tổ chức team building ít nhất 2 lần mỗi năm.
+======================
+NỘI QUY CÔNG TY TECH
+======================
+
+I. THỜI GIAN LÀM VIỆC
+1. Công ty làm việc từ thứ Hai đến thứ Sáu hằng tuần.
+2. Giờ làm việc chính thức: từ 08h00 đến 17h00.
+3. Nhân viên có 60 phút nghỉ trưa, từ 12h00 đến 13h00.
+4. Thứ Bảy và Chủ Nhật là ngày nghỉ. Tuy nhiên, trong trường hợp đặc biệt, nhân viên có thể được yêu cầu làm thêm.
+5. Mỗi nhân viên cần có mặt tại nơi làm việc đúng giờ quy định. Đi trễ hoặc về sớm quá 15 phút 3 lần trong tháng sẽ bị nhắc nhở.
+
+II. TRANG PHỤC VÀ TÁC PHONG
+1. Nhân viên cần mặc trang phục lịch sự, gọn gàng, phù hợp với môi trường công sở.
+2. Không được mặc quần đùi, áo ba lỗ, dép lê hoặc trang phục phản cảm khi đến công ty.
+3. Phải đeo thẻ nhân viên trong giờ làm việc.
+4. Giữ thái độ hòa nhã, tôn trọng đồng nghiệp, cấp trên và khách hàng.
+5. Không nói tục, không gây mất trật tự hoặc ảnh hưởng đến người khác trong giờ làm việc.
+
+III. SỬ DỤNG TÀI SẢN CÔNG TY
+1. Tài sản của công ty bao gồm máy tính, điện thoại, bàn ghế, thiết bị văn phòng, phần mềm, v.v.
+2. Nhân viên có trách nhiệm bảo quản và sử dụng đúng mục đích, không được mang ra khỏi công ty nếu chưa được phép.
+3. Tuyệt đối không cài đặt phần mềm lạ, không truy cập trang web không liên quan đến công việc trong giờ làm.
+4. Khi kết thúc ngày làm việc, cần tắt máy tính, đèn, điều hòa và các thiết bị điện khác.
+
+IV. BẢO MẬT THÔNG TIN
+1. Tất cả thông tin liên quan đến khách hàng, sản phẩm, dữ liệu nội bộ đều được xem là bí mật của công ty.
+2. Nhân viên không được phép tiết lộ, sao chép hoặc chia sẻ dữ liệu công ty cho bên ngoài nếu chưa có sự đồng ý bằng văn bản.
+3. Nếu vi phạm, nhân viên sẽ bị xử lý kỷ luật hoặc truy cứu trách nhiệm theo quy định pháp luật.
+
+V. NGHỈ PHÉP VÀ NGHỈ ỐM
+1. Nhân viên làm việc đủ 12 tháng được hưởng 12 ngày phép năm.
+2. Nghỉ phép phải được trưởng bộ phận phê duyệt trước ít nhất 1 ngày làm việc.
+3. Trường hợp nghỉ ốm đột xuất phải thông báo cho quản lý trực tiếp trong ngày.
+4. Nếu nghỉ không phép quá 2 ngày liên tiếp, công ty có quyền xem là tự ý nghỉ việc.
+
+VI. CHẤM CÔNG VÀ LƯƠNG THƯỞNG
+1. Công ty sử dụng hệ thống chấm công bằng vân tay.
+2. Mọi sai sót về chấm công phải được báo trong vòng 24 giờ.
+3. Lương được trả vào ngày 05 hằng tháng qua tài khoản ngân hàng.
+4. Làm thêm giờ được tính theo quy định của Luật Lao động:
+   - Ngày thường: 150% lương giờ.
+   - Ngày nghỉ: 200% lương giờ.
+   - Ngày lễ, Tết: 300% lương giờ.
+5. Nhân viên xuất sắc hàng quý sẽ được khen thưởng và ghi nhận.
+
+VII. AN TOÀN LAO ĐỘNG
+1. Nhân viên phải tuân thủ đầy đủ quy định về an toàn, phòng cháy chữa cháy.
+2. Không tự ý sử dụng máy móc, thiết bị mà mình chưa được đào tạo.
+3. Nếu phát hiện nguy cơ mất an toàn, phải báo ngay cho bộ phận hành chính.
+
+VIII. ỨNG XỬ VÀ GIAO TIẾP
+1. Giao tiếp với đồng nghiệp, cấp trên và khách hàng phải thể hiện sự tôn trọng, lịch sự.
+2. Không được nói xấu, vu khống hay lan truyền thông tin sai sự thật.
+3. Không sử dụng mạng xã hội để đăng tải thông tin tiêu cực liên quan đến công ty.
+
+IX. KỶ LUẬT LAO ĐỘNG
+1. Các hành vi vi phạm nội quy sẽ bị xử lý theo 3 cấp độ:
+   - Nhắc nhở bằng miệng.
+   - Cảnh cáo bằng văn bản.
+   - Kỷ luật hoặc chấm dứt hợp đồng.
+2. Các lỗi nghiêm trọng như trộm cắp, đánh nhau, phá hoại tài sản sẽ bị xử lý ngay lập tức.
+3. Nhân viên có quyền khiếu nại nếu cảm thấy bị xử lý sai quy định.
+
+X. QUY ĐỊNH KHÁC
+1. Không được hút thuốc, uống rượu bia hoặc sử dụng chất kích thích trong khuôn viên công ty.
+2. Giữ gìn vệ sinh chung, không vứt rác bừa bãi.
+3. Không sử dụng điện thoại cho mục đích cá nhân quá 5 phút trong giờ làm.
+4. Mọi ý kiến đóng góp hoặc phản hồi có thể gửi về email: hr@techcompany.vn
+5. Nội quy này có hiệu lực kể từ ngày 01/01/2025 và có thể được cập nhật định kỳ.
+
+======================
+CÔNG TY TECH
+Ban hành ngày: 01/01/2025
+======================
