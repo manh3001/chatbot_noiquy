@@ -29,7 +29,7 @@ CACHE = load_cache()
 # Cấu hình CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -44,38 +44,17 @@ class QuestionRequest(BaseModel):
 qa_chain = create_qa_chain()
 logger.info(" QA chain loaded successfully")
 
-# Endpoint hỏi–đáp
-# @app.post("/ask")
-# async def ask_question(request: QuestionRequest):
-#     logger.info(f" Nhận câu hỏi: {request.question}")
-#     start_time = time.time()
-
-#     try:
-#         answer = qa_chain.run(request.question)
-#         elapsed = round(time.time() - start_time, 2)
-#         logger.info(f" Trả lời trong {elapsed}s")
-
-#         return JSONResponse({
-#             "session_id": request.session_id,
-#             "question": request.question,
-#             "answer": answer,
-#             "response_time": elapsed
-#         })
-#     except Exception as e:
-#         logger.exception(" Lỗi khi xử lý câu hỏi:")
-#         raise HTTPException(status_code=500, detail=str(e))
-# ✅ Endpoint hỏi – đáp có cache + log + thời gian phản hồi
-
+# Endpoint hỏi đáp
 @app.post("/ask")
 async def ask_question(request: QuestionRequest):
     question = request.question.strip()
-    logger.info(f" Nhận câu hỏi: {question}")
+    logger.info(f"Nhận câu hỏi: {question}")
     start_time = time.time()
 
     try:
         # Kiểm tra cache
         if question in CACHE:
-            logger.info(f" Lấy câu trả lời từ cache: {question}")
+            logger.info(f"Lấy câu trả lời từ cache: {question}")
             answer = CACHE[question]["answer"]
             timestamp = CACHE[question]["timestamp"]
             elapsed = round(time.time() - start_time, 2)
@@ -89,16 +68,23 @@ async def ask_question(request: QuestionRequest):
             })
 
         # Nếu chưa có trong cache gọi mô hình
-        logger.info(" Đang xử lý bằng mô hình RAG...")
-        answer = qa_chain.run(question)
+        logger.info("Đang xử lý bằng mô hình RAG...")
+
+        # Sử dụng API mới của LangChain
+        response = qa_chain.invoke({"query": question})
+        if isinstance(response, dict):
+            answer = response.get("result") or response.get("output_text") or str(response)
+        else:
+            answer = str(response)
+
         elapsed = round(time.time() - start_time, 2)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        #  Lưu cache
+        # Lưu cache
         CACHE[question] = {"answer": answer, "timestamp": timestamp}
         save_cache(CACHE)
 
-        logger.info(f" Trả lời xong trong {elapsed}s")
+        logger.info(f"Trả lời xong trong {elapsed}s")
 
         return JSONResponse({
             "session_id": request.session_id,
@@ -110,15 +96,15 @@ async def ask_question(request: QuestionRequest):
         })
 
     except Exception as e:
-        logger.exception(" Lỗi khi xử lý câu hỏi:")
+        logger.exception("Lỗi khi xử lý câu hỏi:")
         raise HTTPException(status_code=500, detail=str(e))
+
     
 # Kiểm tra API
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "message": "Chatbot API is running!"}
 
-# giao diện
 # Mount thư mục static ở đường dẫn /static
 app.mount("/static", StaticFiles(directory="static"), name="static")
 

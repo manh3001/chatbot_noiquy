@@ -8,7 +8,7 @@ Dự án xây dựng chatbot thông minh giúp trả lời câu hỏi về **n�
 - LangChain (RAG pipeline)
 - ChromaDB (vector database)
 - HuggingFace Embeddings
-- Ollama (LLM LLaMA3 hoặc Mistral)
+- Ollama (LLM LLaMA3 hoặc phi3)
 - Python dotenv, pydantic
 
 ##  Cách chạy
